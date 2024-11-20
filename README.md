@@ -79,4 +79,11 @@ JPA 기능으로 `TodoRepositoryImpl`에서 Q클래스를 생성하는 코드를
 
 9. Spring Security
 
-Postman 자체로는 돌아가지만 토큰 발급이 안되는 것 같다.
+수정 및 추가한 클래스
+- `SecurityConfig`
+- `AuthUserArgumentResolver`
+- `JwtFilter`
+- `JwtUtil`
+- `CustomUserDetails`
+- `CustomUserDetailsService`
+
