@@ -7,7 +7,7 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
 import static org.springframework.data.web.config.EnableSpringDataWebSupport.PageSerializationMode.VIA_DTO;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "org.example.expert")
 @EnableAspectJAutoProxy
 @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO)
 public class ExpertApplication {
