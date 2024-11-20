@@ -15,9 +15,9 @@ public class UserResponse {
         this.nickname = nickname;
     }
 
-    public UserResponse(Long id, String email) {
-        this.id = id;
-        this.email = email;
-        this.nickname = null;
-    }
+//    public UserResponse(Long id, String email) {
+//        this.id = id;
+//        this.email = email;
+//        this.nickname = null;
+//    }
 }
