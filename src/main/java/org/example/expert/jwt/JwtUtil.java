@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.security.Key;
+import java.time.Instant;
 import java.util.Base64;
 import java.util.Date;
 
@@ -35,6 +36,9 @@ public class JwtUtil {
     }
 
     public String createToken(Long userId, String email, String nickname, UserRole userRole) {
+        Instant now = Instant.now();
+        log.info("JWT 발급 시간: {}", now);
+        log.info("JWT 만료 시간: {}", now.plusMillis(TOKEN_TIME));
         Date date = new Date();
 
         return BEARER_PREFIX +
@@ -47,6 +51,7 @@ public class JwtUtil {
                         .setIssuedAt(date) // 발급일
                         .signWith(key, signatureAlgorithm) // 암호화 알고리즘
                         .compact();
+
     }
 
     public String substringToken(String tokenValue) {
